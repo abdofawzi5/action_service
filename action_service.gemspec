@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "action_service/version"
 
 # Gem description:
-Gem::Specification.new do |s|
+Gem::Specification.new do |spec|
   spec.name        = "action_service"
   spec.version     = ActionService::VERSION
   spec.authors     = ["Abdo Fawzi"]
@@ -17,5 +17,7 @@ Gem::Specification.new do |s|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 5.1.6"
+
+  spec.add_development_dependency "sqlite3"
 
 end
