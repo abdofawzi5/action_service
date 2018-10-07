@@ -1,6 +1,7 @@
 require 'action_service/version'
 require 'generators/rails/service_generator'
-require 'generators/application_service_generator'
+# require 'generators/rails/service/application_service_generator'
+require 'generators/service/application_service_generator'
 
 module ActionService
  
