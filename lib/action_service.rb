@@ -1,10 +1,10 @@
 require 'action_service/version'
-require 'generators/rails/service_generator'
-# require 'generators/rails/service/application_service_generator'
-require 'generators/service/application_service_generator'
+require 'generators/service/service_generator'
+require 'generators/application_service/application_service_generator'
 
 module ActionService
- 
+  
+  
   # ActionService::Base is the parent class for all services that will be generated.
   class Base
    def initialize

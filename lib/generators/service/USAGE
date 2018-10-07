@@ -1,5 +1,5 @@
 Description:
-    Generates a service for complex logic.
+    Generates a service for logic implementation.
 
 Example:
     `rails generate service UserLogin`

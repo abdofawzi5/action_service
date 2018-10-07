@@ -10,7 +10,7 @@ module Service
     private
 
     def application_service_file_name
-      @application_record_file_name ||= "app/services/application_action.rb"
+      @application_record_file_name ||= "app/services/application_service.rb"
     end
     
 
