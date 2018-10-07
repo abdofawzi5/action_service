@@ -1,9 +1,11 @@
 require 'action_service/version'
+require 'generators/rails/service_generator'
+require 'generators/application_service_generator'
 
 module ActionService
  
-  # ApplicationService is the parent class for all services will be generated.
-  class ApplicationService
+  # ActionService::Base is the parent class for all services that will be generated.
+  class Base
    def initialize
       @errors = []     # contain errors
       @response = {}   # contain the service response data
