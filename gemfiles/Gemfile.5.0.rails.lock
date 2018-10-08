@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: ..
   specs:
     action_service (0.36.0)
       rails (>= 2.0, <= 6)
@@ -122,6 +122,7 @@ PLATFORMS
 DEPENDENCIES
   action_service!
   gemika
+  rails (~> 5.0)
 
 BUNDLED WITH
    1.16.5
