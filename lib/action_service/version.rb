@@ -1,3 +1,3 @@
 module ActionService
-  VERSION = '0.1.0'
+  VERSION = '0.35.0'
 end

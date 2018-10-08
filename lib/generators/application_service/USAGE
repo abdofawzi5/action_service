@@ -1,0 +1,6 @@
+Description:
+    Generates an application service class, application service class is a class that inherits from action service base class.
+
+Example:
+    `rails generate service:application_service`
+
