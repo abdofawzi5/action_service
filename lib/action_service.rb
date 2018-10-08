@@ -25,13 +25,14 @@ module ActionService
       @success
     end
 
-    def add_error(error)
+    def add_error(*error_message)
       @success = false
-      if error.kind_of?(Array)
-        @errors += error
-      else
-        @errors.append(error)
-      end
+      @errors += error_messages_list
+    end
+
+    def add_errors(error_messages_list)
+      @success = false
+      @errors += error_messages_list
     end
   end
 
