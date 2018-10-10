@@ -2,7 +2,7 @@
 Welcome to Action Service gem, is a ruby gem to create and interact easily with services.
 
 ## Why services
-Is where you can add your code to perform simple functionality instead of making complex controller or models.
+Is where you can add your code to perform simple functionality instead of making complex controllers or models.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -43,13 +43,13 @@ And when you open `authenticate_service.rb` will be like this
 ```ruby
 class Admin::AuthenticateService < ApplicationService
 
-	def initialize()
-		super()
-	end
+    def initialize()
+        super()
+    end
 
-	def call
-		return self
-	end
+    def call
+        return self
+    end
 
 end
 ```
@@ -72,18 +72,18 @@ Now, let's implement `Admin::AuthenticateService`
 ```ruby
 class Admin::AuthenticateService < ApplicationService
 
-	def initialize(email, password)
-		super()
-		@admin = Admin.find_by(email: email)
-		@password = password
-	end
+    def initialize(email, password)
+        super()
+        @admin = Admin.find_by(email: email)
+        @password = password
+    end
 
-	def call
-	    add_error "wrong admin email" and return sef if not @admin
-	    add_error "wrong password" and return seld if not @admin.authenticate(@password)
-	    @response[:admin] = @admin
-		return self
-	end
+    def call
+        add_error "wrong admin email" and return sef if not @admin
+        add_error "wrong password" and return seld if not @admin.authenticate(@password)
+        @response[:admin] = @admin
+        return self
+    end
 end
 ```
 
@@ -103,23 +103,23 @@ end
 ```ruby
 class Cache::List::AddHashService < ApplicationService
 
-	def initialize(list_key, hash_key, hash_data, expiry_datetime=nil)
-		super()
-		@list_key = list_key
-		@hash_key = hash_key
-		@hash = hash_data
-		@expiry_datetime = expiry_datetime
-	end
+    def initialize(list_key, hash_key, hash_data, expiry_datetime=nil)
+        super()
+        @list_key = list_key
+        @hash_key = hash_key
+        @hash = hash_data
+        @expiry_datetime = expiry_datetime
+    end
 
-	def call
-		result = Cache::Hash::SetService.new(hash_key, hash_data, @expiry_datetime).call
-		# if Cache::Hash::SetService fails will stop excuting and return the errors
-		add_errors result.errors and return self if not result.success? 
-		result = Cache::List::AddService.new(list_key, hash_key, @expiry_datetime).call
-		# if Cache::List::AddService fails will stop excuting and return the errors
-		add_errors result.errors and return self if not result.success?
-		self
-	end
+    def call
+        result = Cache::Hash::SetService.new(hash_key, hash_data, @expiry_datetime).call
+        # if Cache::Hash::SetService fails will stop excuting and return the errors
+        add_errors result.errors and return self if not result.success? 
+        result = Cache::List::AddService.new(list_key, hash_key, @expiry_datetime).call
+        # if Cache::List::AddService fails will stop excuting and return the errors
+        add_errors result.errors and return self if not result.success?
+        self
+    end
 end
 ```
 
@@ -127,4 +127,4 @@ end
 Bug reports and pull requests are welcome on GitHub at [https://github.com/abdofawzi5/action_service](https://github.com/abdofawzi5/action_service). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
-The gem is available as open source unde
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
