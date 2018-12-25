@@ -1,3 +1,4 @@
+require 'rails/generators'
 require 'action_service/version'
 require 'generators/service/service_generator'
 require 'generators/application_service/application_service_generator'
