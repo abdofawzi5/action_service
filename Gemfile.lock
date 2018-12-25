@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    action_service (1.0.2)
+    action_service (1.0.3)
       rails (>= 2.0, <= 6)
 
 GEM
