@@ -79,8 +79,8 @@ class Admin::AuthenticateService < ApplicationService
     end
 
     def call
-        add_error "wrong admin email" and return sef if not @admin
-        add_error "wrong password" and return seld if not @admin.authenticate(@password)
+        add_error "wrong admin email" and return self if not @admin
+        add_error "wrong password" and return self if not @admin.authenticate(@password)
         @response[:admin] = @admin
         return self
     end
