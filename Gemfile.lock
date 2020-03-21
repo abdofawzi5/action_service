@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     action_service (1.1.0)
-      rails (>= 2.0)
+      rails (>= 6.0, >= 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -66,7 +66,6 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
-    gemika (0.4.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -137,7 +136,6 @@ PLATFORMS
 
 DEPENDENCIES
   action_service!
-  gemika
 
 BUNDLED WITH
    1.17.3
