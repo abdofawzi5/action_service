@@ -123,6 +123,9 @@ class Cache::List::AddHashService < ApplicationService
 end
 ```
 
+## Troubleshooting 
+In case your Rails app can't access the services directory and showing an error like `uninitialized constant ServiceName` you can solve it by adding `app/services` to `config/spring.rb`
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at [https://github.com/abdofawzi5/action_service](https://github.com/abdofawzi5/action_service). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
