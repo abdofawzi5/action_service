@@ -25,7 +25,7 @@ module ActionService
 
     def add_errors(*error_messages)
       @success = false
-      error_messages = error_messages[0] if error_messages[0].is_a?
+      error_messages = error_messages[0] if error_messages[0].is_a? Array
       @errors += error_messages
     end
   end
