@@ -1,6 +1,5 @@
 module Service
   class ServiceGenerator < Rails::Generators::NamedBase
-
     source_root File.expand_path('templates', __dir__)
 
     def create_service_file
@@ -10,12 +9,11 @@ module Service
     private
 
     def file_name
-      @_file_name ||= remove_possible_suffix(super)
+      @file_name ||= remove_possible_suffix(super)
     end
 
     def remove_possible_suffix(name)
-      name.sub(/_?service$/i, "")
+      name.sub(/_?service$/i, '')
     end
-
   end
 end

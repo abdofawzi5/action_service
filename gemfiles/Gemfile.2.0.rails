@@ -1,9 +1,0 @@
-source 'https://rubygems.org'
-
-# Runtime dependencies
-gem 'rails', '~>2.0'
-
-# Development dependencies
-gem 'gemika'
-
-gem 'action_service', :path => '..'
