@@ -5,7 +5,7 @@ class <%= class_name %>Service < ApplicationService
   end
 
   def call
-    return self
+    self
   end
 end
 <% end -%>
