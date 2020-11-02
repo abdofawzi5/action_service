@@ -1,8 +1,8 @@
-# ActionService v1.0
+# ActionService v1.x
 Welcome to Action Service gem, is a ruby gem to create and interact easily with services.
 
 ## Why services
-Is where you can add your code to perform simple functionality instead of making complex controllers or models.
+This is where you can add your code to perform a simple function instead of making complex controllers or models.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -22,7 +22,7 @@ $ gem install action_service
 ```
 
 ## Setting up
-For start to use the gem execute:
+To start to use the gem execute:
 ```bash
 $ rails g service:application_service
 ```
@@ -55,15 +55,15 @@ end
 ```
 
 ### ApplicationService class
-All generated services are inhariting from `ApplcaitonService`, `ApplicationService` is inherite from `ActoinService::Base, So all service will contain:  
+All generated services are inheriting from `ApplcaitonService`, `ApplicationService` is inherited from `ActoinService::Base, So all service will contain:  
 #### Three instance variables 
-1. `@success` is a boolean with `true` as default value , and if you add any error this flag will be changed to `false`. 
-2. `@errors` is a array contain a list if errors.
+1. `@success` is a boolean with `true` as the default value, and if you add any error this flag will be changed to `false`. 
+2. `@errors` is an array containing a list of errors.
 3. `@response` is a hash to add service response (values, objects, etc.).
 #### Six instance methods
-1. `success?` to get boolean if service excuted successfully ot not (based on adding errors).
-2. `errors` to get list of errors.
-3. `response` to get response hash.
+1. `success?` to get boolean if service is executed successfully or not (based on adding errors).
+2. `errors` to get a list of errors.
+3. `response` to get the response hash.
 4. `add_error(error_message)` to add error (will change `@success` to `false`), Example `add_error("wrong admin id")`.
 5. `add_errors(*error_messages)` to add errors as parameters or array (will change `@success` to `false`), Example `add_errors("email is required","phone number is aready exist")` OR `add_errors(["email is required","phone number is aready exist"])`.
 6. `add_errors_array(error_messages_array)` to add array of errors (will change `@success` to `false`), Example `add_errors_array(["email is required","phone number is aready exist"])`.
@@ -87,7 +87,7 @@ class Admin::AuthenticateService < ApplicationService
 end
 ```
 
-This service is now ready to be used, For example we will call the service inside a controller
+This service is now ready to be used, For example, we will call the service inside a controller
 ```ruby
 result =  Admin::AuthenticateService.new(params[:email], params[:password]).call
 if result.success?
@@ -99,7 +99,7 @@ else:
 end
 ```
 
-#### Services layer will help you to write clean code, by small models, controller and DRY code (don't repeat yourself), you can use service inside another service and stop excuting the first service if the second one fails, Example:
+#### Services layer will help you to write clean code, by small models, controller and DRY code (don't repeat yourself), you can use service inside another service and stop executing the first service if the second one fails, Example:
 ```ruby
 class Cache::List::AddHashService < ApplicationService
 
@@ -127,4 +127,4 @@ end
 Bug reports and pull requests are welcome on GitHub at [https://github.com/abdofawzi5/action_service](https://github.com/abdofawzi5/action_service). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open-source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
